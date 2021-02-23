@@ -17,47 +17,50 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp">
+
             <TextView
-                android:id="@+id/txtName"
+                android:id="@+id/txtTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
-                android:text="Name: "
-                android:textStyle="bold"
-                android:textSize="20sp"
+                android:paddingRight="15dp"
+                android:text="Judul : "
                 android:textColor="@color/colorPrimaryDark"
-                android:paddingRight="15dp"/>
-            <TextView
-                android:id="@+id/ctxtName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_toRightOf="@+id/txtName"
-                android:text="Name: "
-                android:textStyle="bold"
                 android:textSize="20sp"
-                android:textColor="@color/colorPrimaryDark"/>
+                android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/txtAge"
+                android:id="@+id/ctxtTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/txtName"
-                android:text="Age: "
-                android:textStyle="bold"
-                android:textSize="20sp"
+                android:layout_toRightOf="@+id/txtTitle"
+                android:text="Judul : "
                 android:textColor="@color/colorPrimaryDark"
-                android:paddingRight="15dp"/>
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
             <TextView
-                android:id="@+id/ctxtAge"
+                android:id="@+id/txtDesc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtTitle"
+                android:paddingRight="15dp"
+                android:text="Deskripsi : "
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/ctxtDesc"
 
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_toRightOf="@+id/txtAge"
-                android:layout_below="@id/ctxtName"
-                android:text="Age here: "
-                android:textStyle="bold"
+                android:layout_below="@id/ctxtTitle"
+                android:layout_toRightOf="@+id/txtDesc"
+                android:text="Deskripsi"
+                android:textColor="@color/colorPrimaryDark"
                 android:textSize="20sp"
-                android:textColor="@color/colorPrimaryDark"/>
+                android:textStyle="bold" />
             <ImageView
                 android:id="@+id/imgdelete"
                 android:layout_width="wrap_content"

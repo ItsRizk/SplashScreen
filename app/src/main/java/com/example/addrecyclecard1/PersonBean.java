@@ -1,20 +1,20 @@
 package com.example.addrecyclecard1;
 
 public class PersonBean {
-    String name;
-    int age;
+    String Title;
+    String Desc;
     public PersonBean() {
     }
-    public String getName() {
-        return name;
+    public String getTitle() {
+        return Title;
     }
-    public void setName(String name) {
-        this.name = name;
+    public void setTitle(String Title) {
+        this.Title = Title;
     }
-    public int getAge() {
-        return age;
+    public String getDesc() {
+        return Desc;
     }
-    public void setAge(int age) {
-        this.age = age;
+    public void setDesc(String Desc) {
+        this.Desc = Desc;
     }
 }

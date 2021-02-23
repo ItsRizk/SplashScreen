@@ -36,8 +36,8 @@ public class RecyclerviewAdapter extends
     @Override
     public void onBindViewHolder(@NonNull UserViewHolder holder, final int position) {
         final PersonBean currentPerson=listPersonInfo.get(position);
-        holder.ctxtName.setText(currentPerson.getName());
-        holder.ctxtAge.setText(currentPerson.getAge()+"");
+        holder.ctxtTitle.setText(currentPerson.getTitle());
+        holder.ctxtDesc.setText(currentPerson.getDesc()+"");
         holder.imgEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -56,12 +56,12 @@ public class RecyclerviewAdapter extends
         return listPersonInfo.size();
     }
     public class UserViewHolder extends RecyclerView.ViewHolder {
-        TextView ctxtAge,ctxtName;
+        TextView ctxtDesc,ctxtTitle;
         ImageView imgDelete,imgEdit;
         public UserViewHolder(@NonNull View itemView) {
             super(itemView);
-            ctxtAge=itemView.findViewById(R.id.ctxtAge);
-            ctxtName=itemView.findViewById(R.id.ctxtName);
+            ctxtDesc=itemView.findViewById(R.id.ctxtDesc);
+            ctxtTitle=itemView.findViewById(R.id.ctxtTitle);
             imgDelete=itemView.findViewById(R.id.imgdelete);
             imgEdit=itemView.findViewById(R.id.imgedit);
         }

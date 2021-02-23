@@ -16,7 +16,7 @@ import java.util.List;
 public class MainFragment extends Fragment implements
         View.OnClickListener,RecyclerviewAdapter.OnUserClickListener{
     RecyclerView recyclerView;
-    EditText edtName,edtAge;
+    EditText edtTitle,edtDesc;
     Button btnSubmit;
     RecyclerView.LayoutManager layoutManager;
     Context context;
@@ -38,8 +38,8 @@ public class MainFragment extends Fragment implements
         recyclerView=view.findViewById(R.id.recyclerview);
         layoutManager=new LinearLayoutManager(context);
         recyclerView.setLayoutManager(layoutManager);
-        edtName=view.findViewById(R.id.edtname);
-        edtAge=view.findViewById(R.id.edtage);
+        edtTitle=view.findViewById(R.id.edttitle);
+        edtDesc=view.findViewById(R.id.edtdesc);
         btnSubmit=view.findViewById(R.id.btnsubmit);
         btnSubmit.setOnClickListener(this);
         setupRecyclerView();
@@ -59,19 +59,19 @@ public class MainFragment extends Fragment implements
             PersonBean currentPerson = new PersonBean();
             String btnStatus=btnSubmit.getText().toString();
             if(btnStatus.equals("Submit")) {
-                currentPerson.setName(edtName.getText().toString());
-                currentPerson.setAge(Integer.parseInt(edtAge.getText().toString()));
+                currentPerson.setTitle(edtTitle.getText().toString());
+                currentPerson.setDesc((edtDesc.getText().toString()));
                 db.insert(currentPerson);
             }
             if(btnStatus.equals("Update")){
-                currentPerson.setName(edtName.getText().toString());
-                currentPerson.setAge(Integer.parseInt(edtAge.getText().toString()));
+                currentPerson.setTitle(edtTitle.getText().toString());
+                currentPerson.setDesc((edtDesc.getText().toString()));
                 db.update(currentPerson);
             }
             setupRecyclerView();
-            edtName.setText("");
-            edtAge.setText("");
-            edtName.setFocusable(true);
+            edtTitle.setText("");
+            edtDesc.setText("");
+            edtTitle.setFocusable(true);
             btnSubmit.setText("Submit");
         }
     }
@@ -79,14 +79,14 @@ public class MainFragment extends Fragment implements
     public void onUserClick(PersonBean currentPerson, String action) {
         if(action.equals("Edit")){
 
-            edtName.setText(currentPerson.getName());
-            edtName.setFocusable(false);
-            edtAge.setText(currentPerson.getAge()+"");
+            edtTitle.setText(currentPerson.getTitle());
+            edtTitle.setFocusable(true);
+            edtDesc.setText(currentPerson.getDesc()+"");
             btnSubmit.setText("Update");
         }
         if(action.equals("Delete")){
             DatabaseHelper db=new DatabaseHelper(context);
-            db.delete(currentPerson.getName());
+            db.delete(currentPerson.getTitle());
             setupRecyclerView();
         }
     }
